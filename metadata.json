@@ -1,5 +1,5 @@
 {
-  "name": "Remix Localizador Docente",
+  "name": "Localizador Docente",
   "description": "Gestión escolar y consulta de horarios y ubicación de docentes y grupos para el CEIP Antonio Gala (Curso 2026/2027).",
   "requestFramePermissions": [],
   "majorCapabilities": [

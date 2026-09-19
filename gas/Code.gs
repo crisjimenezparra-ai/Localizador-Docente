@@ -53,15 +53,33 @@ function doGet(e) {
   if (!action || action === 'app') {
     try {
       return HtmlService.createHtmlOutputFromFile('Index')
-        .setTitle('Localizador Docente - CEIP Antonio Gala')
+        .setTitle('Localizador Docente – CEIP Antonio Gala')
         .addMetaTag('viewport', 'width=device-width, initial-scale=1, maximum-scale=1')
+        .addMetaTag('description', 'Consulta en tiempo real de horarios, aulas y disponibilidad del profesorado del CEIP Antonio Gala (Curso 2026/2027).')
         .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
     } catch (err) {
-      // Redirección automática y directa a la aplicación web
-      var appUrl = 'https://ais-pre-bpglhu6s3mivgewpe7qd7d-427301777664.europe-west2.run.app';
-      var html = '<!DOCTYPE html><html><head><meta charset="utf-8">'
+      // Redirección automática y directa a la aplicación web con metadatos OpenGraph completos
+      var appUrl = 'https://ais-pre-bpglhu6s3mivgewpe7qd7d-427301777664.europe-west2.run.app/';
+      var ogImage = 'https://ais-pre-bpglhu6s3mivgewpe7qd7d-427301777664.europe-west2.run.app/og-image.jpg';
+      var html = '<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">'
         + '<meta name="viewport" content="width=device-width, initial-scale=1">'
-        + '<title>Cargando Localizador Docente...</title>'
+        + '<title>Localizador Docente – CEIP Antonio Gala</title>'
+        + '<meta name="description" content="Consulta en tiempo real de horarios, aulas y disponibilidad del profesorado del CEIP Antonio Gala (Curso 2026/2027).">'
+        + '<meta property="og:type" content="website">'
+        + '<meta property="og:url" content="' + appUrl + '">'
+        + '<meta property="og:locale" content="es_ES">'
+        + '<meta property="og:title" content="Localizador Docente – CEIP Antonio Gala">'
+        + '<meta property="og:site_name" content="CEIP Antonio Gala">'
+        + '<meta property="og:description" content="Consulta en tiempo real de horarios, aulas y disponibilidad del profesorado del CEIP Antonio Gala (Curso 2026/2027).">'
+        + '<meta property="og:image" content="' + ogImage + '">'
+        + '<meta property="og:image:secure_url" content="' + ogImage + '">'
+        + '<meta property="og:image:type" content="image/jpeg">'
+        + '<meta property="og:image:width" content="1024">'
+        + '<meta property="og:image:height" content="1024">'
+        + '<meta name="twitter:card" content="summary">'
+        + '<meta name="twitter:title" content="Localizador Docente – CEIP Antonio Gala">'
+        + '<meta name="twitter:description" content="Consulta en tiempo real de horarios, aulas y disponibilidad del profesorado del CEIP Antonio Gala.">'
+        + '<meta name="twitter:image" content="' + ogImage + '">'
         + '<style>'
         + '  body { font-family: system-ui, -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #0f172a; color: #f8fafc; }'
         + '  .card { text-align: center; padding: 2rem; border-radius: 1rem; background: #1e293b; border: 1px solid #334155; max-width: 420px; }'
@@ -78,7 +96,7 @@ function doGet(e) {
         + '</div>'
         + '</body></html>';
       return HtmlService.createHtmlOutput(html)
-        .setTitle('Localizador Docente - CEIP Antonio Gala')
+        .setTitle('Localizador Docente – CEIP Antonio Gala')
         .addMetaTag('viewport', 'width=device-width, initial-scale=1, maximum-scale=1')
         .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
     }
