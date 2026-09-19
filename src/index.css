@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Prevenir zoom automático no deseado en móviles (iOS Safari / Android Chrome) al tocar campos de entrada */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="search"],
+  input[type="time"],
+  input[type="number"],
+  input[type="password"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}

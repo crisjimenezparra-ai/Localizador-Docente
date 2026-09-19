@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#055bed"/>
+      <stop offset="45%" stop-color="#0243cf"/>
+      <stop offset="100%" stop-color="#00278e"/>
+    </linearGradient>
+
+    <!-- Wave Left Gradient -->
+    <linearGradient id="waveLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0035a8"/>
+      <stop offset="100%" stop-color="#002275"/>
+    </linearGradient>
+
+    <!-- Wave Right Gradient -->
+    <linearGradient id="waveRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#002b94"/>
+      <stop offset="100%" stop-color="#001859"/>
+    </linearGradient>
+
+    <!-- Pin Subtle Gradient -->
+    <linearGradient id="pinGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="#f8faff"/>
+      <stop offset="100%" stop-color="#e2ebfc"/>
+    </linearGradient>
+
+    <!-- Pin Circle Interior Gradient -->
+    <linearGradient id="pinInteriorGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0b388f"/>
+      <stop offset="100%" stop-color="#041e57"/>
+    </linearGradient>
+
+    <!-- Neon Ground Ring Glow Gradient -->
+    <linearGradient id="neonRingGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5a3"/>
+      <stop offset="50%" stop-color="#38fbd0"/>
+      <stop offset="100%" stop-color="#00d592"/>
+    </linearGradient>
+
+    <!-- Soft Shadow for Pin -->
+    <filter id="pinShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#00103a" flood-opacity="0.55"/>
+    </filter>
+
+    <!-- Glow for Neon Ring -->
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Rounded Squircle Clip Path -->
+    <clipPath id="squircleClip">
+      <rect x="0" y="0" width="1024" height="1024" rx="230" ry="230"/>
+    </clipPath>
+  </defs>
+
+  <!-- App Icon Base Squircle -->
+  <rect x="0" y="0" width="1024" height="1024" rx="230" ry="230" fill="url(#bgGrad)"/>
+
+  <!-- Inside Clipped Graphics (Waves and Details) -->
+  <g clip-path="url(#squircleClip)">
+    <!-- Layered Dark Waves at bottom -->
+    <path d="M-50,580 Q160,490 400,640 Q620,770 1080,560 L1080,1080 L-50,1080 Z" fill="url(#waveLeftGrad)" opacity="0.85"/>
+    <path d="M-50,680 Q320,530 650,680 Q850,780 1080,630 L1080,1080 L-50,1080 Z" fill="url(#waveRightGrad)" opacity="0.95"/>
+
+    <!-- Glowing Ground Neon Ring / Floor Target -->
+    <g filter="url(#neonGlow)">
+      <!-- Dark Floor Depth Inside Ring -->
+      <ellipse cx="512" cy="726" rx="142" ry="34" fill="#001a40" opacity="0.8"/>
+      <!-- Neon Mint Ellipse Stroke -->
+      <ellipse cx="512" cy="726" rx="142" ry="34" fill="none" stroke="url(#neonRingGrad)" stroke-width="26"/>
+    </g>
+
+    <!-- Glowing Floor Contact Spot -->
+    <ellipse cx="512" cy="726" rx="42" ry="12" fill="#38fbd0" opacity="0.4"/>
+
+    <!-- Map Pin (Location Marker) -->
+    <!-- Pin Head: Circle r=206 at (512, 442) -->
+    <!-- Pin Body: Curves down to smooth tip at (512, 726) -->
+    <g filter="url(#pinShadow)">
+      <path d="
+        M 512,236
+        C 625.76,236 718,328.24 718,442
+        C 718,524.2 660,600 560,676
+        C 538,693 524,710 512,726
+        C 500,710 486,693 464,676
+        C 364,600 306,524.2 306,442
+        C 306,328.24 398.24,236 512,236
+        Z"
+        fill="url(#pinGrad)"
+      />
+    </g>
+
+    <!-- Dark Navy Circle Cutout Inside Pin Head -->
+    <circle cx="512" cy="442" r="148" fill="url(#pinInteriorGrad)"/>
+
+    <!-- Graduation Mortarboard (Birrete) -->
+    <!-- Mortarboard Diamond Top -->
+    <polygon points="512,348 626,398 512,448 398,398" fill="#ffffff"/>
+
+    <!-- Cap Base (Skullcap Band) -->
+    <path d="
+      M 438,416
+      Q 512,448 586,416
+      L 580,470
+      C 568,498 456,498 444,470
+      Z"
+      fill="#ffffff"
+    />
+
+    <!-- Mortarboard Button and Tassel -->
+    <!-- Center Button -->
+    <circle cx="512" cy="398" r="6" fill="#f0f4fa"/>
+    
+    <!-- Tassel String / Ribbon curving to right edge -->
+    <path d="M 512,398 Q 570,412 612,416" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- Tassel Drop Band -->
+    <line x1="612" y1="416" x2="612" y2="466" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- Tassel Finial (Tuft/Bobble) -->
+    <path d="
+      M 607,466
+      C 605,472 605,482 612,488
+      C 619,482 619,472 617,466
+      Z"
+      fill="#ffffff"
+    />
+  </g>
+</svg>

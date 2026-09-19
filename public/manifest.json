@@ -1,0 +1,22 @@
+{
+  "name": "Localizador Docente - CEIP Antonio Gala",
+  "short_name": "Localizador",
+  "description": "Gestión escolar y consulta de horarios y ubicación de docentes y grupos para el CEIP Antonio Gala.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
